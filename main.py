@@ -1,5 +1,6 @@
 from fastapi import FastAPI, UploadFile, File
 import base64
+from model import generate
 
 app = FastAPI()
 
@@ -8,5 +9,5 @@ app = FastAPI()
 async def process_document(file: UploadFile = File(...)):
     contents = await file.read()
     file_base64 = base64.b64encode(contents).decode("utf-8")
-    return {"filename": file.filename, "content": file_base64}
+    return generate(file_base64)
 
