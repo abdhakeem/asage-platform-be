@@ -29,9 +29,5 @@ async def process_document(file: UploadFile = File(...)):
     print("received file:", file.filename)
     result = engine.calculate(extracted_info)
     print("result", result)
-    if "materials" in result:
-        for material in result["materials"]:
-            material["client_id"] = 123
-            # TODO: fix big query write
-            # dao.write(material)
+    dao.write(result.get("materials", []))
     return result

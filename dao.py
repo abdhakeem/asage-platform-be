@@ -85,6 +85,8 @@ class DAO:
         self.job_config.source_format = bigquery.SourceFormat.NEWLINE_DELIMITED_JSON
         self.job_config.schema = format_schema(table_schema)
 
-    def write(self, data):
-        job = self.client.load_table_from_json(data, self.table, job_config=self.job_config)
+    def write(self, data_list, client_id=0):
+        for data in data_list:
+            data["client_id"] = client_id
+        job = self.client.load_table_from_json(data_list, self.table, job_config=self.job_config)
         print(job.result())
