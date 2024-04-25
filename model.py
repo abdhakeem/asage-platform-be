@@ -57,6 +57,7 @@ def retry_on_error(max_retries=2, delay=1):
 
     return decorator
 
+
 class Model():
     def __init__(self):
         vertexai.init(project="polar-equinox-420601", location="us-central1")
