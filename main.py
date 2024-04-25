@@ -24,4 +24,7 @@ async def process_document(file: UploadFile = File(...)):
     contents = await file.read()
     file_base64 = base64.b64encode(contents).decode("utf-8")
     extracted_info = model.generate(file.filename, file_base64)
-    return engine.process(extracted_info)
+    print("received file:", file.filename)
+    result = engine.process(extracted_info)
+    print("result", result)
+    return result
