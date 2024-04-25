@@ -1,0 +1,38 @@
+$card-background: rgb(239, 241, 244);
+$card-font-color: rgb(53,63, 78);
+$primary-font-color: rgb(112, 174, 145);
+
+.upperPart {
+    display: flex;
+    justify-content: center;
+    .dragDropArea {
+        background-color: $card-background;
+        height: 400px;
+        width: 440px;
+        border: 5px dashed $card-font-color;
+        border-radius: 70px;
+        border-style: dashed;
+        border-width: 5px;
+        margin-bottom: 36px;
+    
+        .dragDropInner {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+    
+            .imgCard {
+                height: 100px;
+            }
+    
+            .dragDropLabel {
+                font-size: 32px;
+                font-weight: bold;
+                color: $card-font-color;
+            }
+            
+        }
+    }
+}

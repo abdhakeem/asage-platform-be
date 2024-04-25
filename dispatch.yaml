@@ -1,0 +1,11 @@
+dispatch:
+  # Send all api traffic to the backend service.
+  - url: "polar-equinox-420601.uc.r.appspot.com/*"
+    service: default
+
+  # Send all other traffic to the default (frontend).
+  - url: "frontend-dot-polar-equinox-420601.uc.r.appspot.com/*"
+    service: frontend
+
+  - url: "*/*"
+    service: frontend

@@ -1,0 +1,55 @@
+$font-color: #b7d090;
+$active-color: rgb(246,194,67);
+$inactive-color: rgb(175,185,201);
+
+.sidebarWrapper {
+    background-color: #373e4fff;
+    height: 100vh;
+}
+
+.asageLogo {
+    
+    padding-top: 40px;
+    padding-bottom: 20px;
+    color: $font-color;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.unorderedList {
+    padding-left: 40px;
+    padding-right: 40px;
+    margin-top: 20px;
+
+    .listItem {
+        cursor:pointer;
+        list-style: none;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        margin-bottom: 16px;
+
+        &:global(.active) {
+            @extend .listItem;
+            border: 2px solid;
+            border-radius: 15px;
+            border-color: $active-color;
+        }
+
+        .menuIcon {
+            height: 40px;
+            width: 40px;
+        }
+
+        .tabLabel {
+            display: flex;
+            align-items: center;
+            color: $inactive-color;
+            font-weight: bold;
+
+            &:global(.active) {
+                @extend .tabLabel;
+                color: $active-color;
+            }
+        }
+    }
+}
