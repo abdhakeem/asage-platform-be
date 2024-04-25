@@ -3,10 +3,12 @@ from fastapi.middleware.cors import CORSMiddleware
 import base64
 from model import Model
 from engine import Engine
+from dao import DAO
 
 app = FastAPI()
 model = Model()
 engine = Engine()
+dao = DAO()
 
 origins = ["*"]
 
@@ -27,4 +29,9 @@ async def process_document(file: UploadFile = File(...)):
     print("received file:", file.filename)
     result = engine.calculate(extracted_info)
     print("result", result)
+    if "materials" in result:
+        for material in result["materials"]:
+            material["client_id"] = 123
+            # TODO: fix big query write
+            # dao.write(material)
     return result
