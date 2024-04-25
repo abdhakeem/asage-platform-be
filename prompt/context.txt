@@ -1,3 +1,29 @@
+Scope 1 Sub Categories:
+    Stationary combustion
+    Mobile combustion
+    Fugitive emissions
+    Process emissions
+    Land use, land use change and forestry (LULUCF)
+Scope 2 Sub Categories:
+    Purchased electricity
+    Purchased energy (heating, cooling and compressed air)
+Scope 3 Sub Categories:
+    Purchased Goods and Services
+    Capital Goods
+    Fuel- and Energy-Related Activities Not Included in Scope 1 or Scope 2
+    Upstream Transportation and Distribution
+    Waste Generated in Operations
+    Business Travel
+    Employee Commuting
+    Upstream Leased Assets
+    Downstream Transportation and Distribution
+    Processing of Sold Products
+    Use of Sold Products
+    End-of-Life Treatment of Sold Products
+    Downstream Leased Assets
+    Franchises
+    Investments
+
 Scope 1
  Definition
    Stationary combustion
