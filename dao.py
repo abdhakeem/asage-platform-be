@@ -35,7 +35,7 @@ table_schema = {
     "mode": "NULLABLE"
 }, {
     "name": "quantity",
-    "type": "INTEGER",
+    "type": "FLOAT",
     "mode": "NULLABLE"
 }, {
     "name": "units",
@@ -71,7 +71,7 @@ table_schema = {
     "mode": "NULLABLE"
 }, {
     "name": "emissions",
-    "type": "INTEGER",
+    "type": "FLOAT",
     "mode": "NULLABLE"
 }
 
@@ -80,7 +80,7 @@ class DAO:
     def __init__(self):
         self.client = bigquery.Client(project="polar-equinox-420601")
         self.table = self.client.get_dataset('polar-equinox-420601.aluminium_materials_demo').table(
-            'aluminium_materials_demo_v2')
+            'aluminium_materials_demo')
         self.job_config = bigquery.LoadJobConfig()
         self.job_config.source_format = bigquery.SourceFormat.NEWLINE_DELIMITED_JSON
         self.job_config.schema = format_schema(table_schema)
