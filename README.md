@@ -1,11 +1,11 @@
-# Setup
+## Setup
 `pip install -r requirements.txt`
 
-# Running
-Local
+## Local
+Backend
 
 `uvicorn main:app --reload`
 
-Deploy
+## Deploy
 
-`gcloud app deploy`
+`gcloud app deploy frontend.yaml dispatch.yaml app.yaml`
